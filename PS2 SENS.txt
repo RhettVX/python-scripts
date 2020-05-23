@@ -1,0 +1,29 @@
+C15 = DPI
+C18, C20, C24
+= cm360
+
+Hipfire:
+=-0.3+11.7581/(C18*C15)^(1/3)
+
+ADS 1.35x:
+=-0.3+11.7581/(C20*C15/(1.6*1.35))^(1/3)
+
+Scoped 4x:
+=-0.3+11.7581/(C24*C15/(1.6*4))^(1/3)
+
+
+From nawyria (relationship derived by measurements and statistical best fit so it won't be exact):
+
+Here's the formulae:
+
+Turn Distance (Hip) = 1/DPI x ( 11.7581 / (Sensitivity + 0.3))3
+
+Turn Distance (ADS) = 1/DPI x ( 11.7581 / (Sensitivity + 0.3))3 x 1.6 x Scope Zoom Factor
+
+From here it's relatively easy to invert the formula to find Sensitivity as a function of desired Turn Distance:
+
+Sensitivity (Hip) = 11.7581 / (DPI x Turn Distance)1/3 - 0.3
+
+Sensitivity (ADS) = 11.7581 x (1.6 x Scope Zoom Factor / (DPI x Turn Distance))1/3 - 0.3
+
+Here the offset of 0.3 and the factor of 11.7581 are the best-fitted values that I found.
